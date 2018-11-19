@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta name="robots" content="noindex">
+  <meta charset="utf-8">
+  <title>Artifact #4</title>
+</head>
+
+<body>
+  <h1>CONTACT US FORM</h1>
+  <div id="errorMessages"></div>
+  <!--Add the URL to your Thank you page -->
+  <form action="http://bellevuecollege.edu" method="get" name="myContact" onSubmit="return ValidateForm(); ">
+    <fieldset>
+      <legend><b>User Information</b></legend>
+      <label for="firstname">Enter Firstname <i>(Max 20 characters)</i> </label>
+      <br>
+      <input type="text" id="firstname">
+      <br>
+      <label for="lastname">Enter Lastname <i>(Max 50 characters)</i> </label>
+      <br>
+      <input type="text" id="lastname">
+      <br>
+      <label for="email">Enter Email <i> (Required)</i></label>
+      <br>
+      <input type="text" id="email">
+      <br>
+      <label for="phone">Enter Phone Number <i>(Max 15 Characters)</i> </label>
+      <br>
+      <input type="text" id="phone">
+      <br>
+      <label for="username">Enter Username <i>(Max 12 Characters)</i></label>
+      <br>
+      <input type="text" maxlength="12" id="username">
+      <br>
+      <label for="password">Enter Password <i>(Max 7 Characters)</i></label>
+      <br>
+      <input type="password" maxlength="7" id="password">
+
+    </fieldset>
+    <fieldset>
+      <legend><b>Current Address</b></legend>
+      <label for="address">Enter Address<i>(Required)</i></label>
+      <br>
+      <input type="text" name="address" id="address" size="50">
+      <br>
+      <label for="city">Enter City<i>(Required)</i></label>
+      <br>
+      <input type="text" name="city" id="city">
+      <br>
+      <label for="countries">Choose Country<i>(Required)</i></label>
+      <br>
+      <select id="countries">
+        <option>Canada</option>
+        <option>Mexico</option>
+        <option>United States</option>
+      </select>
+      <br>
+      <label for="zipcode">Enter Zipcode <i> (Required only if the country is USA)</i></label>
+      <br>
+      <input type="text" name="zip" id="zipcode">
+    </fieldset>
+
+    <fieldset>
+      <legend><b>Feel free to add comments</b></legend>
+      <textarea name="commentbox" id="commentbox" rows="4" cols="50"></textarea>
+    </fieldset>
+
+    <br>
+    <input id="submit" type="submit" value="Submit">
+    <input id="cancel" type="submit" value="Cancel">
+  </form>
+
+  <footer>
+    <br>
+    <a href="https://jigsaw.w3.org/css-validator/check/referer">
+      <img style="border:0;width:88px;height:31px" src="https://jigsaw.w3.org/css-validator/images/vcss" alt="Valid CSS!" />
+    </a>
+    <a href="https://jigsaw.w3.org/css-validator/check/referer">
+      <img style="border:0;width:88px;height:31px" src="https://jigsaw.w3.org/css-validator/images/vcss-blue" alt="Valid CSS!" />
+    </a>
+  </footer>
+</body>
+
+</html>
