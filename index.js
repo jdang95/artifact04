@@ -11,7 +11,7 @@ function ValidateForm(){
   
  var letters = /^[A-Za-z]+$/;
  var numbers = /^[0-9]+$/;
- var sign = /^[@.]+$/;
+
   
  var errorMessages ="";  // All the error messages are going to stay in this variable
  /*********** VALIDATES USERNAME ******** */
@@ -21,7 +21,8 @@ function ValidateForm(){
 
 /*********** VALIDATES USERNAME ******** */
   
- if (myContact.username.value.length >= 12 || myContact.username.value===null || myContact.username.value==="")
+ if (myContact.username.value.length >= 12 || myContact.username.value===null || myContact.username.value==="" ||  
+!myContact.password.value.match(letters)) 
     errorMessages += "<p>The username must be less than 12 characters and is required</p>";
  else 
     validUsername =true;
@@ -32,7 +33,8 @@ function ValidateForm(){
  /*********** VALIDATES PASSWORD ******** */
  if (myContact.password.value==null ||
  myContact.password.value=== "" ||
- myContact.password.value.length >7)
+ myContact.password.value.length >7 ||  
+!myContact.password.value.match(numbers))
  errorMessages += "<p>The password must be less than 7 characters and it is required</p>";
  else
  validUserPassword = true; 
@@ -56,7 +58,7 @@ function ValidateForm(){
       /*********** VALIDATES EMAIL******** */
  if (myContact.email.value==null ||
  myContact.email.value=== "" ||
-!myContact.email.value.match(sign))
+!myContact.email.value.match(/^[A-Za-z\._\-[0-9]*[@][A-Za-z]*[\.][a-z]{2,4}$/))
 
  errorMessages += "<p> Email Not Valid.</p>";
  else
@@ -67,7 +69,7 @@ function ValidateForm(){
  if (myContact.phone.value==null ||
  myContact.phone.value=== "" ||
  myContact.phone.value.length >15 ||  
-!myContact.phone.value.match(numbers) )
+!myContact.phone.value.match(numbers))
  errorMessages += "<p>The phone number must be less than 15 characters and it is required. Only numbers are accepted</p>";
  else
  validPhone = true; 
@@ -75,7 +77,7 @@ function ValidateForm(){
  /*********** VALIDATES ADDRESS******** */
  if (myContact.address.value==null ||
  myContact.address.value=== "" ||
-  !myContact.address.value.match(letters))
+  !myContact.address.value.match(letters, numbers))
  errorMessages += "<p>The Address must be less than 50 characters and it is required.</p>";
  else
  validAddress = true; 
