@@ -22,7 +22,7 @@ function ValidateForm(){
 /*********** VALIDATES USERNAME ******** */
   
  if (myContact.username.value.length >= 12 || myContact.username.value===null || myContact.username.value==="" ||  
-!myContact.password.value.match(letters)) 
+!myContact.password.value.match(/^[0-9a-zA-Z]+$/)) 
     errorMessages += "<p>The username must be less than 12 characters and is required</p>";
  else 
     validUsername =true;
@@ -34,7 +34,7 @@ function ValidateForm(){
  if (myContact.password.value==null ||
  myContact.password.value=== "" ||
  myContact.password.value.length >7 ||  
-!myContact.password.value.match(numbers))
+!myContact.password.value.match(/^[0-9a-zA-Z]+$/))
  errorMessages += "<p>The password must be less than 7 characters and it is required</p>";
  else
  validUserPassword = true; 
@@ -77,8 +77,8 @@ function ValidateForm(){
  /*********** VALIDATES ADDRESS******** */
  if (myContact.address.value==null ||
  myContact.address.value=== "" ||
-  !myContact.address.value.match(letters, numbers))
- errorMessages += "<p>The Address must be less than 50 characters and it is required.</p>";
+  !myContact.address.value.match(/^[a-zA-Z\s\d\/]*\d[a-zA-Z\s\d\/]*$/))
+ errorMessages += "<p>In Valid Address</p>";
  else
  validAddress = true; 
   
@@ -93,7 +93,7 @@ function ValidateForm(){
   /*********** VALIDATES ZipCode******** */
  if (myContact.zipcode.value==null ||
  myContact.zipcode.value=== "" ||
- myContact.password.value.length >5 ||
+ myContact.zipcode.value.length >5 ||
   !myContact.zipcode.value.match(numbers))
  errorMessages += "<p>ZipCode not Valid must be less than 5 characters</p>";
  else
